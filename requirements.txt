@@ -11,3 +11,6 @@ chromadb
 pypdf
 typer
 typing
+sqlalchemy
+pgvector
+psycopg[binary]
