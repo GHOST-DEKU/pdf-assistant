@@ -6,6 +6,7 @@ from phi.knowledge.pdf import PDFUrlKnowledgeBase
 from phi.vectordb.pgvector import PgVector2
 import os
 from dotenv import load_dotenv
+from phi.embedder.sentence_transformer import SentenceTransformerEmbedder
 
 load_dotenv("../.env")
 
@@ -17,7 +18,8 @@ knowledge_base = PDFUrlKnowledgeBase(
     vector_db=PgVector2(
         collection="recipes",
         db_url=db_url
-    )
+    ),
+    embedder=SentenceTransformerEmbedder()
 )
 
 knowledge_base.load()
