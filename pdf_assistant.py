@@ -7,7 +7,7 @@ from phi.vectordb.pgvector import PgVector2
 import os
 from dotenv import load_dotenv
 
-load_dotenv("../env")
+load_dotenv("../.env")
 
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 db_url = "postgresql+psycopg://ai:ai@localhost:5532/ai"
@@ -15,7 +15,7 @@ db_url = "postgresql+psycopg://ai:ai@localhost:5532/ai"
 knowledge_base = PDFUrlKnowledgeBase(
     urls=["https://phi-public.s3.amazonaws.com/recipes/ThaiRecipes.pdf"],
     vector_db=PgVector2(
-        collection_name="recipes",
+        collection="recipes",
         db_url=db_url
     )
 )
