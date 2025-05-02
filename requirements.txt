@@ -9,3 +9,5 @@ groq
 streamlit
 chromadb
 pypdf
+typer
+typing
